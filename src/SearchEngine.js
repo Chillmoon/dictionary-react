@@ -1,18 +1,20 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Results from "./Results";
 
 export default function SearchEngine(props) {
   let [keyword, setKeyword] = useState(props.defaultWord);
+  let [results, setResults] = useState(null);
 
-  function showKeyword(response) {
+  function handleResponse(response) {
     console.log(response);
-    alert(`You are searching for ${response.data[0].word}`);
+    setResults(response.data[0]);
   }
 
   function handleSubmit(event) {
     let url = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
     event.preventDefault();
-    axios.get(url).then(showKeyword);
+    axios.get(url).then(handleResponse);
   }
 
   function handleKeywordChange(event) {
@@ -30,6 +32,7 @@ export default function SearchEngine(props) {
         ></input>
         <button type="submit">Search</button>
       </form>
+      <Results results={results} />
     </div>
   );
 }
