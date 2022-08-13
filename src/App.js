@@ -5,7 +5,8 @@ function App() {
   return (
     <div className="App">
       <header>Dictionary</header>
-      <SearchEngine defaultWord="sky" />
+      <SearchEngine defaultKeyword="sky" />
+
       <footer>
         This project was coded by <a href="https://t.me/Chillmoon">Chillmoon</a>{" "}
         and is open-sourced on{" "}

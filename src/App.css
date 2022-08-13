@@ -16,6 +16,7 @@
   font-family: "Abril Fatface", cursive;
   background: var(--background);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   margin: 30px 0px 10px 0px;
 }

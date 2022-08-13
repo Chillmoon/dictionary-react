@@ -4,7 +4,7 @@ import Results from "./Results";
 import Photos from "./Photos";
 
 export default function SearchEngine(props) {
-  let [keyword, setKeyword] = useState(props.defaultWord);
+  let [keyword, setKeyword] = useState(props.defaultKeyword);
   let [results, setResults] = useState(null);
   let [photos, setPhotos] = useState(null);
 
