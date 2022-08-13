@@ -25,13 +25,17 @@ export default function SearchEngine(props) {
     <div className="SearchEngine">
       <form onSubmit={handleSubmit}>
         <input
+          className="rounded"
           type="search"
           autoFocus={true}
           placeholder="Enter the word"
           onChange={handleKeywordChange}
         ></input>
-        <button type="submit">Search</button>
+        <button type="submit" className="rounded">
+          Search
+        </button>
       </form>
+
       <Results results={results} />
     </div>
   );
