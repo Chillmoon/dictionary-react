@@ -4,7 +4,7 @@ import Results from "./Results";
 import Photos from "./Photos";
 
 export default function SearchEngine(props) {
-  let [keyword, setKeyword] = useState(props.defaultKeyword);
+  let [keyword, setKeyword] = useState(props.defaultWord);
   let [results, setResults] = useState(null);
   let [photos, setPhotos] = useState(null);
 
@@ -24,13 +24,8 @@ export default function SearchEngine(props) {
     const pexelsKey =
       "563492ad6f9170000100000152303c3e19f447db923ce1e623ed2b50";
     let pexelsUrl = `https://api.pexels.com/v1/search?query=${keyword}&per_page=9`;
-    axios
-      .get(pexelsUrl, {
-        headers: {
-          Authorization: `token ${pexelsKey}`,
-        },
-      })
-      .then(handlePexelsResponse);
+    let headers = { Authorization: `Bearer ${pexelsKey}` };
+    axios.get(pexelsUrl, { headers: headers }).then(handlePexelsResponse);
   }
 
   function handleKeywordChange(event) {

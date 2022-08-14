@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
       <header>Dictionary</header>
-      <SearchEngine defaultKeyword="sky" />
+      <SearchEngine defaultKeyword="moon" />
 
       <footer>
         This project was coded by <a href="https://t.me/Chillmoon">Chillmoon</a>{" "}
